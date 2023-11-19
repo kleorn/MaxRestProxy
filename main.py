@@ -5,7 +5,7 @@ import config_secret
 
 async def get_response(url, payload, headers):
     async with ClientSession() as session:
-        async with session.post(url, json=payload) as response:
+        async with session.post(url, json=payload, headers=headers) as response:
             original_response_text = await response.text(encoding=None)
             response_headers_multidict = response.headers
             original_response_headers = {}

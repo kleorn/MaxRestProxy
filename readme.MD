@@ -1,7 +1,8 @@
-1. cd /var/docker_volumes
-1. git clone https://github.com/kleorn/MaxRestProxy
-1. Скопировать по FTP файл config_secret.py
-1. chmod -R 777 MaxRestProxy
-1. cd MaxRestProxy
-1. docker build . --tag MaxRestProxy
-1. docker run -p MY_PORT:8080 -v /var/docker_volumes/gamegpt:/var/gamegpt --restart unless-stopped MaxRestProxy
+cd /var/docker_volumes
+git clone https://github.com/kleorn/MaxRestProxy
+Скопировать по FTP файл config_secret.py
+chmod -R 777 MaxRestProxy
+cd MaxRestProxy
+docker build . --tag max_rest_proxy
+#replace MY_PORT to port number you want to listen
+docker run -p MY_PORT:8080 -v /var/docker_volumes/MaxRestProxy:/var/MaxRestProxy --restart unless-stopped max_rest_proxy
