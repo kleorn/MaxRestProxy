@@ -53,7 +53,7 @@ async def main():
     app.add_routes([web.post('/', handle)])
     runner = web.AppRunner(app)
     await runner.setup()
-    site = web.TCPSite(runner, 'localhost', config_secret.PROXY_PORT)
+    site = web.TCPSite(runner, '0.0.0.0', config_secret.PROXY_PORT)
     await site.start()
 
     while True:
